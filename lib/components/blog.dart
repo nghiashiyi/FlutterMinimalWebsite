@@ -9,20 +9,26 @@ import 'package:minimal/routes.dart';
 
 class ImageWrapper extends StatelessWidget {
   final String image;
+  final BoxFit fit;
+  final double width;
+  final double height;
+  final EdgeInsets margin;
 
-  const ImageWrapper({Key key, this.image}) : super(key: key);
+  const ImageWrapper(
+      {Key key, this.image, this.fit, this.margin, this.width, this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     //TODO Listen to inherited widget width updates.
-    double width = MediaQuery.of(context).size.width;
+    double _width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 24),
+      margin: margin ?? EdgeInsets.symmetric(vertical: 24),
       child: Image.asset(
         image,
-        width: width,
-        height: width / 1.618,
-        fit: BoxFit.cover,
+        width: width ?? _width,
+        height: height ?? (_width / 1.77),
+        fit: fit ?? BoxFit.cover,
       ),
     );
   }
@@ -320,10 +326,10 @@ class MenuBar extends StatelessWidget {
               GestureDetector(
                 onTap: () => Navigator.popUntil(
                     context, ModalRoute.withName(Navigator.defaultRouteName)),
-                child: Text("MINIMAL",
+                child: Text("nghia.tech".toUpperCase(),
                     style: GoogleFonts.montserrat(
-                        color: textPrimary,
-                        fontSize: 30,
+                        color: textAccent,
+                        fontSize: 25,
                         letterSpacing: 3,
                         fontWeight: FontWeight.w500)),
               ),
@@ -390,11 +396,7 @@ class MenuBar extends StatelessWidget {
               ),
             ],
           ),
-        ),
-        Container(
-            height: 1,
-            margin: EdgeInsets.only(bottom: 30),
-            color: Color(0xFFEEEEEE)),
+        )
       ],
     );
   }

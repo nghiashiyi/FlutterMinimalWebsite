@@ -2,17 +2,39 @@ import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:minimal/components/color.dart';
 
-// Simple
+TextStyle bigHeadlineTextStyle = GoogleFonts.montserrat(
+    textStyle: TextStyle(
+        fontSize: 36,
+        color: textPrimary,
+        letterSpacing: 1.5,
+        fontWeight: FontWeight.w600));
+
 TextStyle headlineTextStyle = GoogleFonts.montserrat(
     textStyle: TextStyle(
-        fontSize: 26,
+        fontSize: 36,
         color: textPrimary,
         letterSpacing: 1.5,
         fontWeight: FontWeight.w300));
 
 TextStyle headlineSecondaryTextStyle = GoogleFonts.montserrat(
     textStyle: TextStyle(
-        fontSize: 20, color: textPrimary, fontWeight: FontWeight.w300));
+        fontSize: 28, color: textPrimary, fontWeight: FontWeight.w300));
+
+TextStyle headlineThirdTextStyle = GoogleFonts.montserrat(
+    textStyle: TextStyle(
+        fontSize: 24, color: textPrimary, fontWeight: FontWeight.w600));
+
+TextStyle headlineFourTextStyle = GoogleFonts.montserrat(
+    textStyle: TextStyle(
+        fontSize: 18, color: textPrimary, fontWeight: FontWeight.w400));
+
+TextStyle headlineBodyTextStyle = GoogleFonts.montserrat(
+    textStyle: TextStyle(
+        fontSize: 18, color: textPrimary, fontWeight: FontWeight.w200));
+
+TextStyle headlineFiveTextStyle = GoogleFonts.montserrat(
+    textStyle: TextStyle(
+        fontSize: 14, color: textPrimary, fontWeight: FontWeight.w400));
 
 TextStyle subtitleTextStyle = GoogleFonts.openSans(
     textStyle: TextStyle(fontSize: 14, color: textSecondary, letterSpacing: 1));
@@ -21,7 +43,7 @@ TextStyle bodyTextStyle = GoogleFonts.openSans(
     textStyle: TextStyle(fontSize: 14, color: textPrimary));
 
 TextStyle buttonTextStyle = GoogleFonts.montserrat(
-    textStyle: TextStyle(fontSize: 14, color: textPrimary, letterSpacing: 1));
+    textStyle: TextStyle(fontSize: 14, color: textAccent, letterSpacing: 1));
 
 // Advanced
 // TODO: Add additional text styles.
